@@ -1,0 +1,30 @@
+<header class="site-header">
+  <div class="site-container nav-wrapper">
+    <a href="/" class="site-logo">M.</a>
+    
+    <!-- Desktop Navigation -->
+    <nav class="main-nav desktop-only">
+      <a href="/" class="{% if request.path == '/' or request.path == '/index.html' %}active{% endif %}">Work</a>
+      <a href="/project.html" class="{% if request.path contains 'project' %}active{% endif %}">Projects</a>
+      <a href="/about.html" class="{% if request.path contains 'about' %}active{% endif %}">About</a>
+      <a href="/contact.html" class="{% if request.path contains 'contact' %}active{% endif %}">Contact</a>
+    </nav>
+
+    <!-- Mobile Navigation Drawer Lit Component -->
+    <portfolio-mobile-nav></portfolio-mobile-nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo Text",
+      "default": "M."
+    }
+  ]
+}
+{% endschema %}

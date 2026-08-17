@@ -1,0 +1,22 @@
+{
+  "name": "shopify-editorial-portfolio",
+  "version": "1.0.0",
+  "description": "Luxury Editorial Web Portfolio built with Shopify Liquid, Lit-html, and SCSS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build:css": "sass src/scss/main.scss assets/theme.css --style=compressed",
+    "build:js": "esbuild src/js/app.js --bundle --minify --outfile=assets/app.js --format=esm",
+    "watch:css": "sass --watch src/scss/main.scss assets/theme.css"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "liquidjs": "^10.13.1",
+    "lit": "^3.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.0",
+    "sass": "^1.77.8"
+  }
+}

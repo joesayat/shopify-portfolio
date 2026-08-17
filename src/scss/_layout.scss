@@ -1,0 +1,131 @@
+// SCSS Layout Rules
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+.site-container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+  }
+}
+
+.site-header {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 0;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .site-logo {
+    font-family: $font-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $text-primary;
+    text-decoration: none;
+    letter-spacing: -0.05em;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .main-nav {
+    display: flex;
+    gap: 2.5rem;
+
+    &.desktop-only {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: $text-secondary;
+      font-size: 0.9rem;
+      font-weight: 400;
+      position: relative;
+      transition: $transition-smooth;
+
+      &:hover, &.active {
+        color: $text-primary;
+      }
+
+      &.active::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $text-primary;
+      }
+    }
+  }
+}
+
+.site-footer {
+  padding: 5rem 0 3rem;
+  border-top: 1px solid $border-light;
+  text-align: center;
+  margin-top: 6rem;
+
+  @media (max-width: 768px) {
+    padding: 3rem 0 2rem;
+    margin-top: 3rem;
+  }
+
+  .footer-logo {
+    font-family: $font-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+
+    @media (max-width: 768px) {
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    a {
+      color: $text-secondary;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: $transition-smooth;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        color: $text-primary;
+        border-bottom-color: $text-primary;
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+    color: $text-muted;
+  }
+}

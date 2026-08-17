@@ -1,0 +1,163 @@
+// SCSS Contact Page Styles
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 6rem;
+  padding: 3rem 0 6rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+.contact-form-column {
+  h1 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 1.15rem;
+    color: $text-secondary;
+    max-width: 540px;
+    margin-bottom: 3.5rem;
+    line-height: 1.6;
+  }
+
+  .form-group {
+    margin-bottom: 2.5rem;
+
+    label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: $text-muted;
+      display: block;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      background: transparent;
+      border: 1px solid $border-light;
+      padding: 1rem 1.2rem;
+      font-family: $font-sans;
+      font-size: 1rem;
+      color: $text-primary;
+      border-radius: 4px;
+      outline: none;
+      transition: $transition-smooth;
+
+      &:focus {
+        border-color: $text-primary;
+        box-shadow: 0 0 0 1px $text-primary;
+      }
+
+      &::placeholder {
+        color: #A0A0A0;
+      }
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+  }
+
+  .btn-submit {
+    background-color: $bg-dark;
+    color: #FFFFFF;
+    border: none;
+    padding: 1.2rem 2.8rem;
+    font-family: $font-sans;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: $transition-smooth;
+    border-radius: 2px;
+
+    &:hover {
+      background-color: #333333;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.contact-info-column {
+  padding-top: 1rem;
+
+  .info-block {
+    margin-bottom: 3rem;
+
+    .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: $text-muted;
+      display: block;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .email-link {
+      font-family: $font-serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: $text-primary;
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      transition: $transition-smooth;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .social-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.6rem;
+
+        a {
+          color: $text-primary;
+          text-decoration: none;
+          font-size: 1.05rem;
+          transition: $transition-smooth;
+
+          &:hover {
+            color: $text-secondary;
+          }
+        }
+      }
+    }
+
+    .address-text {
+      font-size: 1rem;
+      color: $text-secondary;
+      line-height: 1.6;
+    }
+  }
+
+  .contact-studio-media {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 3rem;
+    aspect-ratio: 4 / 3;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

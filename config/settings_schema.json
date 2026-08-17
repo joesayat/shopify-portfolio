@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Theme Information",
+    "settings": [
+      {
+        "type": "text",
+        "id": "studio_name",
+        "label": "Studio Name",
+        "default": "M. Studio"
+      }
+    ]
+  }
+]
